@@ -51,22 +51,45 @@
 
 # primes.rb
 
+# def prime?(num)
+#     (1..num).each do |idx|
+#       if num % idx == 0
+#         return false
+#       end
+#     end
+#   end
+  
+#   def primes(num_primes)
+#     ps = []
+#     num = 1
+#     while ps.count < num_primes
+#       primes << num if prime?(num)
+#     end
+#   end
+
+  
+#   if __FILE__ == $PROGRAM_NAME
+#     puts primes(100)
+#   end
+
+
+
+
+#  Once you've isolated a bug to a small amount of code, the best way to uncover the problem is to single-step through the code,
+#  checking what the program does along the way. This is what a debugger (such as byebug) does.
+
+
+#   To start, we need to modify our program slightly so that we drop into the debugger when prime? is called:
+
+  require 'byebug'
+
 def prime?(num)
-    (1..num).each do |idx|
-      if num % idx == 0
-        return false
-      end
+  debugger # drops us into the debugger right after this point
+
+  (1..num).each do |idx|
+    if num % idx == 0
+      return false
     end
   end
-  
-  def primes(num_primes)
-    ps = []
-    num = 1
-    while ps.count < num_primes
-      primes << num if prime?(num)
-    end
-  end
-  
-  if __FILE__ == $PROGRAM_NAME
-    puts primes(100)
-  end
+end
+
