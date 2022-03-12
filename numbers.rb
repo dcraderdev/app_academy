@@ -56,5 +56,56 @@ puts true != false
 puts true != true
 
 
+# variables
+
+location = "SF"
+# assigned this string to the variable location
+
+my_num = 42
+my_num = my_num + 8
+puts my_num
+
+count = 8
+count = count + 2
+#could be written as count += 2
+puts count
+
+
+sentence = "There is no spoon"
+puts "---1:"
+puts sentence + "?"   # ?
+# There is no spoon?
+
+puts "---2:"
+puts sentence         # ?
+# There is no spoon
+
+sentence += "."
+puts "---3:"
+puts sentence         # ?
+# There is no spoon.
+
+num = 6 / 2
+puts "---4:"
+puts num              # ?
+# 3
+
+puts "---5:"
+puts sentence[num]    # ?
+# r
+
+def average_of_three(num1, num2, num3)
+    num_sum = num1 + num2 + num3
+    num_avg = num_sum / 3.00
+    return num_avg
+  end
+  
+  puts average_of_three(3, 7, 8)   # => 6.0
+  puts average_of_three(2, 5, 17)  # => 8.0
+  puts average_of_three(2, 8, 1)   # => 3.666666
+
+
+
+
 
 
