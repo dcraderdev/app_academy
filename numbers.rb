@@ -251,7 +251,59 @@ def sum_nums(max)
 
 
 
-        
+
+def factorial(num)
+    count = 1
+      i = 1
+      while i <= num
+        i * i
+        count *= i
+     
+        i += 1
+      end
+      return count
+    end
+    
+    puts factorial(3) # => 6, because 1 * 2 * 3 = 6
+    puts factorial(5) # => 120, because 1 * 2 * 3 * 4 * 5 = 120
+
+def reverse(word)
+    reversed = ""
+  
+    i = 0
+    while i < word.length
+      char = word[i]
+      reversed = char + reversed
+  
+      i += 1
+    end
+  
+    return reversed
+  end
+  
+puts reverse("cat")          # => "tac"
+puts reverse("programming")  # => "gnimmargorp"
+puts reverse("bootcamp")     # => "pmactoob"    
+def is_palindrome(word)
+  reversed = ""
+
+  i = 0
+  while i < word.length
+    char = word[i]
+    reversed = char + reversed
+
+    i += 1
+  end
+
+  return reversed == word
+end
+
+puts is_palindrome("racecar")  # => true
+puts is_palindrome("kayak")    # => true
+puts is_palindrome("bootcamp") # => false
+
+
+
 
 
 
