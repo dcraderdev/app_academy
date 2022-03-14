@@ -446,6 +446,110 @@ def reverse_range(min, max)
           return new_arr
         end
         
-        print first_half(["Brian", "Abby", "David", "Ommi"]) # => ["Brian", "Abby"]
-        puts
-        print first_half(["a", "b", "c", "d", "e"])          # => ["a", "b", "c"]
+print first_half(["Brian", "Abby", "David", "Ommi"]) # => ["Brian", "Abby"]
+puts
+print first_half(["a", "b", "c", "d", "e"])          # => ["a", "b", "c"]
+
+def factors_of(num)
+    factors = []
+  
+    i = 1
+    while i <= num
+      if num % i == 0
+        factors << i
+      end
+  
+      i += 1
+    end
+  
+    return factors
+  end
+  
+  print factors_of(3)   # => [1, 3]
+  puts
+  print factors_of(4)   # => [1, 2, 4]
+  puts
+  print factors_of(8)   # => [1, 2, 4, 8]
+  puts
+  print factors_of(9)   # => [1, 3, 9]
+  puts
+  print factors_of(16)  # => [1, 2, 4, 8, 16]
+
+
+def select_odds(numbers)
+  new_arr = []
+    i = 0
+    while i <= numbers.length
+      if numbers[i].to_i % 2 != 0
+        new_arr << numbers[i]
+      end
+      i += 1
+    end
+    return new_arr
+      
+end
+  
+print select_odds([13, 4, 3, 7, 6, 11]) # => [13, 3, 7, 11]
+puts
+print select_odds([2, 4, 6])            # => []
+
+
+def select_long_words(words)
+  long_words = []
+
+  i = 0
+  while i < words.length
+    word = words[i]
+    if word.length > 4
+      long_words << word
+    end
+
+    i += 1
+  end
+
+  return long_words
+end
+
+print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) # => ["eating", "dinner"]
+puts
+print select_long_words(["keep", "coding"])                               # => ["coding"]
+
+
+def sum_elements(arr1, arr2)
+new_arr = []
+  i = 0
+  while i < (arr1.length || i < arr2.length)
+    new_arr << arr1[i] + arr2[i]
+    i += 1
+  end
+  return new_arr
+end
+
+print sum_elements([7, 4, 4, 11], [3, 2, 11, 12, 13])                            # => [10, 6, 15]
+puts
+print sum_elements(["cat", "pizza", "boot"], ["dog", "pie", "camp"]) # => ["catdog", "pizzapie", "bootcamp"]
+
+
+
+
+def fizz_buzz(max)
+new_arr = []
+  i = 0
+  while i < max
+    if (i % 4 == 0 || i % 6 == 0) && !( i % 4 == 0 && i % 6 == 0 )
+      new_arr << i
+      end
+
+    i += 1
+  end
+    return new_arr
+end
+
+print fizz_buzz(20) # => [4, 6, 8, 16, 18]
+puts
+print fizz_buzz(15) # => [4, 6, 8]
+
+
+
+
+
