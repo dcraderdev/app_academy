@@ -306,7 +306,146 @@ puts is_palindrome("bootcamp") # => false
 
 
 
+def doubler(numbers)
+    new_arr = []
+      i = 0
+      while i < numbers.length
+        new_arr << (numbers[i].to_i * 2)
+        i += 1
+      end
+      return new_arr
+        
+    end
+    
+    print doubler([1, 2, 3, 4]) # => [2, 4, 6, 8]
+    puts
+    print doubler([7, 1, 8])    # => [14, 2, 16]
 
 
 
 
+def doubler(numbers)
+  doubled_nums = []
+
+  i = 0
+  while i < numbers.length
+    old_num = numbers[i]
+    new_num = old_num * 2
+    doubled_nums << new_num
+
+    i += 1
+  end
+
+  return doubled_nums
+end
+
+print doubler([1, 2, 3, 4]) # => [2, 4, 6, 8]
+puts
+print doubler([7, 1, 8])    # => [14, 2, 16]
+
+
+def yell(words)
+yell = []
+  i = 0 
+  while i < words.length
+  yell << words[i] + "!"
+    i += 1
+  end
+  return yell
+end
+
+print yell(["hello", "world"]) # => ["hello!", "world!"]
+puts
+print yell(["code", "is", "cool"]) # => ["code!", "is!", "cool!"]
+
+def element_times_index(numbers)
+new_arr = []
+  i = 0
+  while i < numbers.length
+    new_arr << numbers[i] * i
+    i += 1
+  end
+  return new_arr
+    
+end
+
+print element_times_index([4, 7, 6, 5])       # => [0, 7, 12, 15]
+puts
+print element_times_index([1, 1, 1, 1, 1, 1]) # => [0, 1, 2, 3, 4, 5]
+
+
+def even_nums(max)
+new_arr = []
+  i = 0
+  while i <= max
+    if i % 2 == 0
+    new_arr << i
+     
+    end
+    i += 1
+  end
+    return new_arr
+end
+
+print even_nums(10) # => [0, 2, 4, 6, 8, 10]
+puts
+print even_nums(5)  # => [0, 2, 4]
+
+def range(min, max)
+new_arr = []
+ i = min
+  while i <= max
+    new_arr << i
+
+  i += 1
+end
+return new_arr
+end
+
+print range(2, 7)   # => [2, 3, 4, 5, 6, 7]
+puts
+print range(13, 20) # => [13, 14, 15, 16, 17, 18, 19, 20]
+
+def odd_range(min, max)
+    new_arr = []
+      i = min
+      while i <= max
+        if i % 2 == 1
+          new_arr << i
+        end
+          i += 1
+        end
+        return new_arr
+    end
+    
+    print odd_range(11, 19) # => [11, 13, 15, 17]
+    puts
+    print odd_range(3, 7)   # => [3, 5, 7]
+
+def reverse_range(min, max)
+    new_arr = []
+      i = max - 1
+      while i > min
+        new_arr << i
+        i -= 1
+      end
+      return new_arr
+    end
+
+    print reverse_range(10, 17) # => [16, 15, 14, 13, 12, 11]
+    puts
+    print reverse_range(1, 7)   # => [6, 5, 4, 3, 2]
+
+    def first_half(array)
+        new_arr = []
+          i = 0
+          while i < (array.length / 2.0)
+            new_arr << array[i]
+            i += 1
+          end
+          return new_arr
+        end
+        
+        print first_half(["Brian", "Abby", "David", "Ommi"]) # => ["Brian", "Abby"]
+        puts
+        print first_half(["a", "b", "c", "d", "e"])          # => ["a", "b", "c"]
