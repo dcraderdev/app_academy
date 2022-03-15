@@ -550,6 +550,29 @@ puts
 print fizz_buzz(15) # => [4, 6, 8]
 
 
+def to_initials(name)
+    initials = ""
+      names = name.split(" ")
+      names.each { |l| initials << l[0] }
+      p names
+      return initials
+end
+
+puts to_initials("Kelvin Bridges")      # => "KB"
+puts to_initials("Michaela Yamamoto")   # => "MY"
+puts to_initials("Mary La Grange")      # => "MLG"
 
 
 
+def first_in_array(arr, el1, el2)
+    arr.each do |l| 
+      if l == el1 
+        return el1 
+      elsif l == el2 
+        return el2 
+      end
+    end
+    end
+    
+    puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
+    puts first_in_array(["cat", "bird" ,"dog", "mouse" ], "dog", "mouse"); # => "dog"
