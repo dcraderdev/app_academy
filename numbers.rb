@@ -610,3 +610,67 @@ puts abbreviate_word("Hello")
 
 puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
 puts abbreviate_sentence("what a wonderful life")        # => "what a wndrfl life"
+
+
+
+# Hint: use str.upcase and str.downcase
+# "abc".upcase # => "ABC"
+
+def format_name(str)
+  proper_name = []
+	names = str.split(" ")
+	names.each_with_index do |l, i|
+       proper_name << l[0].upcase + l[1..-1].downcase
+      end
+  return proper_name.join(" ")
+end
+
+puts format_name("chase WILSON") # => "Chase Wilson"
+puts format_name("brian CrAwFoRd scoTT") # => "Brian Crawford Scott"
+
+
+# split the names into 2
+# separate letters in each name
+# upcase index 0 of each
+# downcase index 0..-1
+
+
+
+
+# A name is valid is if satisfies all of the following:
+# - contains at least a first name and last name, separated by spaces
+# - each part of the name should be capitalized
+#
+# Hint: use str.upcase or str.downcase
+# "a".upcase # => "A"
+
+def is_valid_name(word)
+  names = word.split(" ")
+  if names.length < 2
+  return false
+  end
+
+  names.each do |l|
+  if !is_valid_name2(l)
+    return false
+  end
+end
+
+return true
+end
+
+
+  def is_valid_name2(word)
+  if word[0] == word[0].upcase && word[1..-1] == word[1..-1].downcase
+    return true 
+  else  
+    return false
+  end
+end
+
+puts is_valid_name("Kush Patel")       # => true
+puts is_valid_name("Daniel")           # => false
+puts is_valid_name("Robert Downey Jr") # => true
+puts is_valid_name("ROBERT DOWNEY JR") # => false
+puts is_valid_name("Robert") # => true for my test, false otherwise
+
