@@ -576,3 +576,37 @@ def first_in_array(arr, el1, el2)
     
     puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
     puts first_in_array(["cat", "bird" ,"dog", "mouse" ], "dog", "mouse"); # => "dog"
+
+
+
+
+def abbreviate_sentence(sent)
+  new_str = []
+  words = sent.split(" ")
+    
+  words.each do |word|
+     if word.length <= 4
+      new_str << word
+        
+      elsif word.length > 4
+      abbrv_word = abbreviate_word(word)
+      new_str << abbrv_word
+    end
+    end
+    return new_str.join(" ")
+end
+
+def abbreviate_word(word)
+  vowels = "aeiouAEIOU"
+  abbrv_word = ""
+  word.each_char do |l| 
+    unless vowels.include?(l)
+    abbrv_word << l
+    end
+    end
+  return abbrv_word
+end
+puts abbreviate_word("Hello")
+
+puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
+puts abbreviate_sentence("what a wonderful life")        # => "what a wndrfl life"
