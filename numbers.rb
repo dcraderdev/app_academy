@@ -937,3 +937,83 @@ p my_hash.keys[1..-1]
 p my_hash.values[0]
 p my_hash.values[0..-1]
 p my_hash.values[1..-1]
+
+
+pizza = {
+  style: "New York",
+  slices: 8,
+  diameter: "15 inches",
+  toppings: ["mushrooms", "green peppers"],
+  is_tasty: true
+}
+
+puts pizza
+
+pizza.each do |key, value|
+puts "key is #{key}"
+puts "value is #{value}"
+end
+
+pizza.each_key do |key, value|
+puts "key is #{key}"
+end
+
+pizza.each_value do |value|
+puts "value is #{value}"
+end
+
+
+
+
+counter = Hash.new(0)
+str = "bootcamp prep"
+str.each_char { |char| counter[char] += 1 }
+puts counter
+
+
+counter = Hash.new(0)
+str = "bootcamp prep"
+str.each_char do |char| 
+  puts char
+  counter[char] += 1
+  puts counter
+end
+
+
+
+
+my_hash = Hash.new(a: 1)
+b = "hello"
+puts my_hash[:a] #["key"]
+puts my_hash[1] #["key"]
+
+puts my_hash.keys[0]
+puts my_hash.values[0]
+
+
+my_hash[3] = "goodbye"
+my_hash[b] = "goodbye"
+puts my_hash
+puts my_hash.keys[0]
+puts my_hash.values[0]
+puts my_hash.keys[1]
+puts my_hash.values[1]
+
+puts "-"
+puts my_hash
+
+
+my_hash = {a: 42, b: 10}
+
+char = :b
+p my_hash[char]
+
+
+str = "mississippi river"
+
+count = Hash.new(0)
+str.each_char { |char| count[char] += 1 }
+
+p count
+sorted = count.sort_by { |k, v| v}
+p sorted[-1][0]
