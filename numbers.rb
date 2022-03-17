@@ -892,20 +892,6 @@ p array_translate(["red", 3, "blue", 1]); # => "redredredblue"
 # - for words that start with a vowel, add 'yay' to the end
 # - for words that start with a nonvowel, move all letters before the first vowel to the end of the word and add 'ay'
 
-def pig_latin_word(word)
-vowels = "aeiouAEIOU"
-  if vowels.include?(word[0])
-    puts "#{word}" + "yay"
-  elsif 
-  end
-  return
-end
-
-puts pig_latin_word("apple")   # => "appleyay"
-puts pig_latin_word("eat")     # => "eatyay"
-puts pig_latin_word("banana")  # => "ananabay"
-puts pig_latin_word("trash")   # => "ashtray"
-
 
 def pig_latin_word(word)
   vowels = "aeiou"
