@@ -797,6 +797,9 @@ puts opposite_count([ 2, 5, 11, -5, -2, 7 ]) # => 2
 puts opposite_count([ 21, -23, 24 -12, 23 ]) # => 1
 
 
+
+# Write a method two_d_Sum that takes in a two dimensional array and returns the sum of all elements in the array.
+
 def two_d_sum(arr)
 	count = 0
 	arr.each do |l|
@@ -820,3 +823,39 @@ array_2 = [
 ]
 puts two_d_sum(array_2)    # => 15
 
+
+
+
+# Write a method two_d_translate that takes in a 2 dimensional array and translates it into a 1 dimensional array. 
+# You can assume that the inner arrays always have 2 elements. See the examples.
+
+
+
+def two_d_translate(arr)
+  new_arr = []
+    arr.each do |sub_array|
+    ele = sub_array[0]
+    num = sub_array[1]
+
+    num.times { new_arr << ele }
+  end
+  return new_arr
+
+end
+
+
+arr_1 = [
+  ['boot', 3],
+  ['camp', 2],
+  ['program', 0]
+]
+
+print two_d_translate(arr_1) # => [ 'boot', 'boot', 'boot', 'camp', 'camp' ]
+
+
+arr_2 = [
+  ['red', 1],
+  ['blue', 4]
+]
+
+print two_d_translate(arr_2) # => [ 'red', 'blue', 'blue', 'blue', 'blue' ]
