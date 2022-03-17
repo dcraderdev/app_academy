@@ -903,6 +903,8 @@ def pig_latin_word(word)
   word.each_char.with_index do |char, i|
     if vowels.include?(char)
       return word[i..-1] + word[0...i] + "ay"
+              # b a n a n a
+              # 1..-1 + 0..0 + ay
     end
   end
 end
@@ -911,3 +913,27 @@ puts pig_latin_word("apple")   # => "appleyay"
 puts pig_latin_word("eat")     # => "eatyay"
 puts pig_latin_word("banana")  # => "ananabay"
 puts pig_latin_word("trash")   # => "ashtray"
+
+
+
+
+# hashes key/value pairs
+
+my_hash = {name: "App Academy", color: "red", age: 35}
+
+p my_hash
+p my_hash[:name]
+
+
+# HASH METHODS
+my_hash.has_key?(:name)
+my_hash.has_value?("red")
+
+
+p my_hash.keys[0]
+p my_hash.keys[0..-1]
+p my_hash.keys[1..-1]
+
+p my_hash.values[0]
+p my_hash.values[0..-1]
+p my_hash.values[1..-1]
