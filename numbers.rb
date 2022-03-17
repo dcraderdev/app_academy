@@ -868,15 +868,22 @@ print two_d_translate(arr_2) # => [ 'red', 'blue', 'blue', 'blue', 'blue' ]
 
 def array_translate(array)
   new_str = ""
+  i = 0
+  while i < array.length
+    ele = array[i]
+    num = array[i + 1]
+    num.times { new_str += ele }
 
-  	
+  	i += 2
+    end
+    return new_str
 end
 
 
-print array_translate(["Cat", 2, "Dog", 3, "Mouse", 1]); # => "CatCatDogDogDogMouse"
-puts
+p array_translate(["Cat", 2, "Dog", 3, "Mouse", 1]); # => "CatCatDogDogDogMouse"
 
-print array_translate(["red", 3, "blue", 1]); # => "redredredblue"
-puts
+
+p array_translate(["red", 3, "blue", 1]); # => "redredredblue"
+
 
 
