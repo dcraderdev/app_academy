@@ -797,5 +797,26 @@ puts opposite_count([ 2, 5, 11, -5, -2, 7 ]) # => 2
 puts opposite_count([ 21, -23, 24 -12, 23 ]) # => 1
 
 
+def two_d_sum(arr)
+	count = 0
+	arr.each do |l|
+      l.each do |n|
+	count += n
+    end
+    end
+	return count
+end
 
+array_1 = [
+  [4, 5],
+  [1, 3, 7, 1]
+]
+p two_d_sum(array_1)    # => 21
+
+array_2 = [
+  [3, 3],
+  [2],
+  [2, 5]
+]
+puts two_d_sum(array_2)    # => 15
 
