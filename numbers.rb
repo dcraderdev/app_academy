@@ -758,8 +758,8 @@ puts
 
 # nested loops
 
-Write a method combinations that takes in an array of unique elements, the method should return a 2D array representing all 
-possible combinations of 2 elements of the array.
+# Write a method combinations that takes in an array of unique elements, the method should return a 2D array representing all 
+# possible combinations of 2 elements of the array.
 
 
 def combinations(arr)
@@ -774,8 +774,28 @@ def combinations(arr)
   return array
 end
 
-print combinations(["a", "b", "c"]); # => [ [ "a", "b" ], [ "a", "c" ], [ "b", "c" ] ]
-puts
+p combinations(["a", "b", "c"]); # => [ [ "a", "b" ], [ "a", "c" ], [ "b", "c" ] ]
 
-print combinations([0, 1, 2, 3]); # => [ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
-puts
+
+p combinations([0, 1, 2, 3]); # => [ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 1, 2 ], [ 1, 3 ], [ 2, 3 ] ]
+
+
+
+def opposite_count(arr)
+count = 0
+  arr.each_with_index do |char1, idx1|
+    arr.each_with_index do |char2, idx2|
+      if idx2 > idx1 && (char1 + char2 == 0)
+        count += 1
+      end
+    end
+  end
+  return count
+end
+
+puts opposite_count([ 2, 5, 11, -5, -2, 7 ]) # => 2
+puts opposite_count([ 21, -23, 24 -12, 23 ]) # => 1
+
+
+
+
