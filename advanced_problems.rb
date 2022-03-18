@@ -245,3 +245,134 @@ puts last_index("abca", "a")       #=> 3
 puts last_index("mississipi", "i") #=> 9
 puts last_index("octagon", "o")    #=> 5
 puts last_index("programming", "m")#=> 7
+
+iterate from the last character
+find the first appearance of the character
+and record the index pos
+
+def last_index(str, char)
+  i = str.length - 1
+  while i >= 0
+    if str[i] = char
+      return i
+    end
+    i -= 1
+  end
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+
+
+def last_index(str, char)
+  i = str.length - 1
+  while i >= 0
+    puts str[i]
+    i -= 1
+  end
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+
+# Most Vowels
+# Write a method most_vowels that takes in a sentence string and 
+# returns the word of the sentence that contains the most vowels.
+
+split sentence into words
+create hash with words as keys
+count += 1 value if key .include?("aeiouAEIOU")
+sort hash, return first index pos
+
+
+def most_vowels(sentence)
+  vowel_count = Hash.new(0)
+  words = sentence.split(" ")
+  vowels = "aeiouAEIOU"
+  better_hash = vowel_count.sort_by { |k, v| -v}
+
+  words.each do |l| 
+    vowel_count[l] += 0
+    l.each_char do |k| 
+      if vowels.include?(k) 
+      then vowel_count[l] += 1 
+      end  
+    end
+  end
+
+  return better_hash[0]
+end
+
+print most_vowels("what a wonderful life") #=> "wonderful"
+
+
+def most_vowels(sentence)
+  vowel_count = {}
+
+  sentence.split(" ").each do |word|
+    vowel_count[word] = vowel_count(word)
+  end
+
+    sorted = vowel_count.sort_by { |k, v| -v}
+    return sorted[0][0]
+  end
+
+
+
+def vowel_count(word)
+  count = 0
+  vowels = "aeiouAEIOU"
+
+  word.each_char do |k| 
+    if vowels.include?(k) 
+    count += 1 
+    end  
+  end
+
+  return count
+end
+
+p most_vowels("what a wonderful life") #=> "wonderful"
+
+
+
+# Prime
+
+# Write a method prime? that takes in a number and returns a boolean, 
+# indicating whether the number is prime. 
+# A prime number is only divisible by 1 and itself.
+
+take in num
+check if num % 1 == true
+check if num % [2..num-1] == true
+if true return false
+else true
+
+
+def prime?(num)
+  if num < 2
+    return false
+  end
+
+  (2...num).each do |n|
+    if num % n == 0
+      return false
+    end
+  end
+  
+    return true
+end
+
+
+puts prime?(2)  #=> true
+puts prime?(5)  #=> true
+puts prime?(11) #=> true
+puts prime?(4)  #=> false
+puts prime?(9)  #=> false
+puts prime?(-5) #=> false

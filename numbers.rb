@@ -925,7 +925,23 @@ p my_hash
 p my_hash[:name]
 
 
+
+
+
+
+
+
+
 # HASH METHODS
+
+# HASH METHODS
+
+# HASH METHODS
+
+
+
+
+
 my_hash.has_key?(:name)
 my_hash.has_value?("red")
 
