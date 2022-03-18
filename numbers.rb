@@ -1131,16 +1131,34 @@ p cat_builder("Salem", "black", 100) #=> {"name"=>"Salem", "color"=>"black", "ag
 # Assume the string contains only lowercase characters.
 
 def ae_count(str)
-  ae_count = Hash.new
+  ae_count = Hash.new(0)
   ae = "ae"
 
   str.each_char do |l|
-  if (l == "a" || l == "e")
-    ae_count(k) += 1
-    # if ae.inlude?(l) do |k| 
-    # ae_count(k) += 1 
+    if ae.inlude?(l) 
+    ae_count[l] += 1 
   end
   end
+
+
+  return ae_count
+end
+
+
+
+puts ae_count("everyone can program") #=> {"a"=>2, "e"=>3}
+puts ae_count("keyboard") #=> {"a"=>1, "e"=>1}
+
+def ae_count(str)
+  ae_count = Hash.new(0)
+  ae = "ae"
+
+  str.each_char do |l|
+    if ae.include?(l)
+    ae_count[l] += 1 
+  end
+  end
+
 
   return ae_count
 end
@@ -1148,18 +1166,17 @@ end
 puts ae_count("everyone can program") #=> {"a"=>2, "e"=>3}
 puts ae_count("keyboard") #=> {"a"=>1, "e"=>1}
 
+# Element Count
+# Write a method element_count that takes in an array and 
+# returns a hash representing the count of each element in the array.
 
-def ae_count(str)
-  count = {"a"=>0, "e"=>0}
-
-  str.each_char do |char|
-    if (char == "a" || char == "e")
-      count[char] += 1
-    end
-  end
-
+def element_count(arr)
+  count = Hash.new(0)
+  arr.map { |l| count[l] += 1 }
   return count
 end
 
-puts ae_count("everyone can program") #=> {"a"=>2, "e"=>3}
-puts ae_count("keyboard") #=> {"a"=>1, "e"=>1}
+puts element_count(["a", "b", "a", "a", "b"]) #=> {"a"=>3, "b"=>2}
+puts element_count(["red", "red", "blue", "green"]) #=> {"red"=>2, "blue"=>1, "green"=>1}
+
+
