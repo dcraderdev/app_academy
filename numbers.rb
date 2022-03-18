@@ -1180,3 +1180,26 @@ puts element_count(["a", "b", "a", "a", "b"]) #=> {"a"=>3, "b"=>2}
 puts element_count(["red", "red", "blue", "green"]) #=> {"red"=>2, "blue"=>1, "green"=>1}
 
 
+# Select Upcase Keys
+# Write a method select_upcase_keys that takes in a hash and returns a new hash 
+# containing key-value pairs of the original hash that had uppercase keys. 
+# You can assume that the keys will always be strings.
+
+
+def select_upcase_keys(hash)
+  new_hash = Hash.new(0)
+  hash.each do |key, value|
+    if key.upcase == key
+      new_hash[key] = value
+end
+end
+return new_hash
+end
+p select_upcase_keys({"make"=> "Tesla", "MODEL"=> "S", "Year"=> 2018, "SEATS"=> 4}) # => {"MODEL"=>"S", "SEATS"=>4}
+
+
+p select_upcase_keys({"DATE"=>"July 4th","holiday"=> "Independence Day", "type"=>"Federal"}) # => {"DATE"=>"July 4th"}
+
+
+
+
