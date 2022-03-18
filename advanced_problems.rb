@@ -121,3 +121,20 @@ end
 
 
 puts yell_sentence("I have a bad feeling about this") #=> "I! HAVE! A! BAD! FEELING! ABOUT! THIS!"
+
+
+# Whisper Words
+# Write a method whisper_words that takes in an array of words and 
+# returns a new array containing a whispered version of each word. See the examples. 
+# Solve this using map
+
+iterate over array
+.downcase + "..."
+
+
+def whisper_words(words)
+return words.map { |l| l.downcase + "..." }
+end
+
+print whisper_words(["KEEP", "The", "NOISE", "down"]) # => ["keep...", "the...", "noise...", "down..."]
+puts
