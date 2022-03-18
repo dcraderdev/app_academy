@@ -105,5 +105,19 @@ print map_by_key(locations, "city") #=> ["New York City", "San Francisco", "Port
 puts
 
 
+# Yell Sentence
+# Write a method yell_sentence that takes in a sentence string and 
+# returns a new sentence where every word is yelled. See the examples. 
+# Use map to solve this.
+
+split sentence into words
+iterate over each word with.upcase and + "!"
+join iterations with .join(" ") into new str
+
+def yell_sentence(sent)
+  return sent.split(" ").map { |l| l.upcase + "!"}.join(" ")
+end
 
 
+
+puts yell_sentence("I have a bad feeling about this") #=> "I! HAVE! A! BAD! FEELING! ABOUT! THIS!"
