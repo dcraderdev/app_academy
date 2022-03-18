@@ -1017,3 +1017,18 @@ str.each_char { |char| count[char] += 1 }
 p count
 sorted = count.sort_by { |k, v| v}
 p sorted[-1][0]
+
+
+
+my_array = ["a", "b", "c"]
+
+my_hash = {name: "Bob", age: 0}
+
+
+
+def get_double_age(hash)
+  return hash["age"] * 2
+end
+
+puts get_double_age({"name"=>"App Academy", "age"=>5}) # => 10
+puts get_double_age({"name"=>"Ruby", "age"=>23})       # => 46
