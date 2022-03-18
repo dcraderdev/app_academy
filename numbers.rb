@@ -1230,12 +1230,26 @@ puts hand_score("jJka") #=> 9
 # Write a method frequent_letters that takes in a string and returns an array containing
 # the characters that appeared more than twice in the string.
 
+# make a new hash
+# add letters to hash
+# sort thru hash and if key has value >= 2 add it to the array
 
 def frequent_letters(string)
+  new_hash = Hash.new(0)
+  double_letters = []
 
+  string.each_char do |l|
+    new_hash[l] += 1
+    end
+
+  new_hash.each do |k, v|
+    if v > 2
+      double_letters << k
+    end
+      end
+return double_letters
 end
 
-print frequent_letters('mississippi') #=> ["i", "s"]
-puts
-print frequent_letters('bootcamp') #=> []
-puts
+p frequent_letters('mississippi') #=> ["i", "s"]
+
+p frequent_letters('bootcamp') #=> []
