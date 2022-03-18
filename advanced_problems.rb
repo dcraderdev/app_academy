@@ -365,7 +365,7 @@ def prime?(num)
       return false
     end
   end
-  
+
     return true
 end
 
@@ -376,3 +376,37 @@ puts prime?(11) #=> true
 puts prime?(4)  #=> false
 puts prime?(9)  #=> false
 puts prime?(-5) #=> false
+
+
+# Pick Primes
+# Write a method pick_primes that takes in an array of numbers
+# and returns a new array containing only the prime numbers.
+
+
+
+def pick_primes(numbers)
+  return numbers.select { |l| prime?(l) }
+end
+
+def prime?(num)
+  if num < 2
+    return false
+  end
+
+  (2...num).each do |n|
+    if num % n == 0
+      return false
+    end
+  end
+
+    return true
+end
+
+
+
+p pick_primes([2, 3, 4, 5, 6]) #=> [2, 3, 5]
+
+p pick_primes([101, 20, 103, 2017]) #=> [101, 103, 2017]
+
+
+
