@@ -156,3 +156,92 @@ print o_words("How did you do that?") #=> ["How", "you", "do"]
 puts
 
 
+# Last Index
+# Write a method last_index that takes in a string and a character. 
+# The method should return the last index where the character can be found in the string.
+
+take in str
+reverse str
+iterate thru str until iteration matches char
+return array position
+
+def last_index(str, char)
+  str.reverse.each_with_index { |l, i| return i when l == char }
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+
+# Last Index
+# Write a method last_index that takes in a string and a character. 
+# The method should return the last index where the character can be found in the string.
+
+iterate over str 
+return array_pos of char when [index of char..-1] !include? char
+
+def last_index(str, char)
+  str.each_char.with_index { |l, i| return i when l == char && l[i..-1].contain?(char) }
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+def last_index(str, char)
+  str.each_char.with_index { |l, i| puts "#{l} is at index #{i}" }
+end
+
+def last_index(str, char)
+  str.each_char.with_index do |l, i| 
+    if l == char && char[i..-1].include?(char)
+      return i
+  end
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+def last_index(str, char)
+  str.each_char.with_index do |l, i| 
+if l == char
+
+
+    return i unless str[i+1..-1].include?(char) && 
+    end
+end
+end
+
+# a, 0
+# return 0 if
+# l = char yes
+# &&
+# abca[0+1..-1]
+
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
+
+
+
+def last_index(str, char)
+  i = str.length - 1
+  while i >= 0
+    if str[i] == char
+      return i
+    end
+    i -= 1
+  end
+end
+
+puts last_index("abca", "a")       #=> 3
+puts last_index("mississipi", "i") #=> 9
+puts last_index("octagon", "o")    #=> 5
+puts last_index("programming", "m")#=> 7
