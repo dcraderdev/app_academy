@@ -1077,3 +1077,33 @@ end
 puts word_lengths("this is fun") #=> {"this"=>4, "is"=>2, "fun"=>3}
 puts word_lengths("When in doubt, leave it out") #=> {"When"=>4, "in"=>2, "doubt,"=>6, "leave"=>5, "it"=>2, "out"=>3}
 
+
+
+# Retrieve Values
+# Write a method retrieve_values that takes in two hashes and a key. 
+# The method should return an array containing the values from the two hashes 
+# that correspond with the given key.
+
+
+what key do we want
+1 is name
+2 is color
+
+iterate over each hash, take desired key and shovel into new_arr
+
+
+
+def retrieve_values(hash1, hash2, key)
+  new_arr = []
+
+  hash1 = hash1[key]
+  hash2 = hash2[key]
+  return [hash1, hash2]
+end
+
+
+dog1 = {"name"=>"Fido", "color"=>"brown"}
+dog2 = {"name"=>"Spot", "color"=> "white"}
+p retrieve_values(dog1, dog2, "name") #=> ["Fido", "Spot"]
+
+p retrieve_values(dog1, dog2, "color") #=> ["brown", "white"]
