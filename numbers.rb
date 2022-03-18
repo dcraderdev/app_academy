@@ -1279,3 +1279,29 @@ p hash_to_pairs({"name"=>"skateboard", "wheels"=>4, "weight"=>"7.5 lbs"})
 
 p hash_to_pairs({"kingdom"=>"animalia", "genus"=>"canis", "breed"=>"German Shepherd"}) 
 #=> [["kingdom", "animalia"], ["genus", "canis"], ["breed", "German Shepherd"]]
+
+# Unique Elements
+# Write a method unique_elements that takes in an array and 
+# returns a new array where all duplicate elements are removed. 
+# Solve this using a hash.
+
+# Hint: all keys of a hash are automatically unique
+
+
+# iterate thru each char in string
+# put each char into hash
+# put each key in hash into array
+
+
+def unique_elements(arr)
+  new_hash = Hash.new(0)
+  new_arr = []
+
+  arr.each { |k, v| new_hash[k] += 1 }
+ # new_hash.each_key { |k| new_arr << k }
+
+  return new_hash.keys
+end
+
+p unique_elements(['a', 'b', 'a', 'a', 'b', 'c']) #=> ["a", "b", "c"]
+
