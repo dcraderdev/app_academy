@@ -1231,7 +1231,7 @@ puts hand_score("jJka") #=> 9
 # the characters that appeared more than twice in the string.
 
 # make a new hash
-# add letters to hash
+# add letters to hash with count
 # sort thru hash and if key has value >= 2 add it to the array
 
 def frequent_letters(string)
@@ -1253,3 +1253,29 @@ end
 p frequent_letters('mississippi') #=> ["i", "s"]
 
 p frequent_letters('bootcamp') #=> []
+
+
+# Hash To Pairs
+# Write a method hash_to_pairs that takes in a hash and returns a 2D array 
+# representing each key-value pair of the hash.
+
+iterate over hash with key and value
+stick each pair into array
+split array by every 2 indices 
+array of arrays?
+
+
+def hash_to_pairs(hash)
+  new_arr = []
+  hash.each do |k, v|
+    new_arr << [k, v]
+  end
+  return new_arr
+end
+
+
+p hash_to_pairs({"name"=>"skateboard", "wheels"=>4, "weight"=>"7.5 lbs"}) 
+#=> [["name", "skateboard"], ["wheels", 4], ["weight", "7.5 lbs"]]
+
+p hash_to_pairs({"kingdom"=>"animalia", "genus"=>"canis", "breed"=>"German Shepherd"}) 
+#=> [["kingdom", "animalia"], ["genus", "canis"], ["breed", "German Shepherd"]]
