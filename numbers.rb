@@ -1124,3 +1124,42 @@ end
 p cat_builder("Whiskers", "orange", 3) #=> {"name"=>"Whiskers", "color"=>"orange", "age"=>3}
 
 p cat_builder("Salem", "black", 100) #=> {"name"=>"Salem", "color"=>"black", "age"=>100}
+
+
+# Ae Count
+# Write a method ae_count that takes in a string and returns a hash containing the number of a's and e's in the string. 
+# Assume the string contains only lowercase characters.
+
+def ae_count(str)
+  ae_count = Hash.new
+  ae = "ae"
+
+  str.each_char do |l|
+  if (l == "a" || l == "e")
+    ae_count(k) += 1
+    # if ae.inlude?(l) do |k| 
+    # ae_count(k) += 1 
+  end
+  end
+
+  return ae_count
+end
+
+puts ae_count("everyone can program") #=> {"a"=>2, "e"=>3}
+puts ae_count("keyboard") #=> {"a"=>1, "e"=>1}
+
+
+def ae_count(str)
+  count = {"a"=>0, "e"=>0}
+
+  str.each_char do |char|
+    if (char == "a" || char == "e")
+      count[char] += 1
+    end
+  end
+
+  return count
+end
+
+puts ae_count("everyone can program") #=> {"a"=>2, "e"=>3}
+puts ae_count("keyboard") #=> {"a"=>1, "e"=>1}
