@@ -138,3 +138,21 @@ end
 
 print whisper_words(["KEEP", "The", "NOISE", "down"]) # => ["keep...", "the...", "noise...", "down..."]
 puts
+
+# O Words
+# Write a method o_words that takes in a sentence string and
+# returns an array of the words that contain an "o". 
+# Use select in your solution!
+
+iterate over str
+select words that contain ("o")
+return arr with those words
+
+def o_words(sentence)
+return sentence.split(" ").select { |l| l.include?("o") }
+end
+
+print o_words("How did you do that?") #=> ["How", "you", "do"]
+puts
+
+
