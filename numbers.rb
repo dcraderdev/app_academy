@@ -1313,7 +1313,7 @@ p unique_elements(['a', 'b', 'a', 'a', 'b', 'c']) #=> ["a", "b", "c"]
 # with their corresponding values in the hash.
 
 iterate over array to see what key we need value for
-kind key in hash
+find key in hash
 shovel key's value into array'
 
 
@@ -1327,7 +1327,7 @@ def element_replace(arr, hash)
       new_arr << k
     end
   end
-  
+
 return new_arr
 end
 
