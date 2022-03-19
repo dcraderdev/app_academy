@@ -566,3 +566,77 @@ print triple_sequence(2, 4) # => [2, 6, 18, 54]
 puts
 print triple_sequence(4, 5) # => [4, 12, 36, 108, 324]
 puts
+
+
+
+
+# Summation Sequence
+# A number's summation is the sum of all positive numbers less than or equal to the number. 
+# For example: the summation of 3 is 6 because 1 + 2 + 3 = 6, the summation of 6 is 21 
+# because 1 + 2 + 3 + 4 + 5 + 6 = 21. Write a method summation_sequence that takes in a 
+# two numbers: start and length. The method should return an array containing length total elements. 
+# The first number of the sequence should be the start number. At any point, to generate the next 
+# element of the sequence we take the summation of the previous element. 
+# You can assume that length is not zero.
+
+take in 2 arguments start, length
+return array with length or array @length
+firs numern = start
+add start + start +1
+return array of sums starting with start
+
+def summation_sequence(start, length)
+  arr = [start]
+  i = 1
+  while i <= length
+    new_num = i + arr[-1]
+    arr << new_num
+    puts "#{new_num} is"
+    i += 1
+  end
+return arr
+end
+
+
+print summation_sequence(3, 4) # => [3, 6, 21, 231]
+print summation_sequence(5, 3) # => [5, 15, 120]
+
+
+
+arr begins with start
+while i < length (iterations/array length)
+next ele is sum of [0..start]
+next ele is sum of [0..last ele]
+next ele is sum of [0..last ele]
+
+
+
+
+
+
+def summation_sequence(start, length)
+  arr = [start]
+  i = 1
+  while i < length
+  new_num = summation_of(arr[-1])
+  arr << new_num
+  i += 1
+  end
+
+  return arr
+end
+
+def summation_of(num)
+  i = 0
+  sum = 0
+  while i <= num
+  sum += i
+  i += 1
+  end
+  return sum
+end
+
+p summation_of(3)
+
+p summation_sequence(3, 4) # => [3, 6, 21, 231]
+p summation_sequence(5, 3) # => [5, 15, 120]
