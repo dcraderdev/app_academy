@@ -449,12 +449,76 @@ print prime_factors(60) #=> [2, 3, 5]
 puts
 
 
+# Greatest Factor Array
+# Write a method greatest_factor_array that takes in an array of numbers
+# and returns a new array where every even number is replaced with it's 
+# greatest factor. A greatest factor is the largest number that divides 
+# another with no remainder. For example the greatest factor of 16 is 8. 
+# (For the purpose of this problem we won't say the greatest factor of 16 is 16, 
+# because that would be too easy, ha)
+
+greatest factor array
+returns new array
+itterate thru array
+if even number it is replaced with greatest factor
+
+greatest factor
+takes in num
+divides all nums 1..num and takes largest possbile divisible number and returns it
 
 
 
+def greatest_factor_array(arr)
+  gfa = []
+  arr.map do |k|
+    if k % 2 == 0   #.is_even?
+      gfa << greatest_factor(k)
+    else
+      gfa << k
+    end
+  end
+
+  return gfa
+end
+
+def greatest_factor(num)
+factors = []
+  (1..num-1).map { |n| factors << n if num % n == 0}
+  return factors[-1]
+end
+
+p greatest_factor_array([16, 7, 9, 14]) # => [8, 7, 9, 7]
+
+p greatest_factor_array([30, 3, 24, 21, 10]) # => [15, 3, 12, 21, 5]
+
+
+# Perfect Square
+# Write a method perfect_square? that takes in a number and 
+# returns a boolean indicating whether it is a perfect square. 
+# A perfect square is a number that results from multiplying a number by itself. 
+# For example, 9 is a perfect square because 3  3 = 9, 25 is a perfect square because 5  5 = 25.
+
+takes in num
+returns boolean if answer = square root of num
 
 
 
+def perfect_square?(num)
+  (1..num).each do |n|
+    if n * n == num
+      return true
+    end
+  end
+  
+  return false
+end
 
+
+
+puts perfect_square?(5)   #=> false
+puts perfect_square?(12)  #=> false
+puts perfect_square?(30)  #=> false
+puts perfect_square?(9)   #=> true
+puts perfect_square?(25)  #=> true
 
 
