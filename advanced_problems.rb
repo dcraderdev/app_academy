@@ -585,33 +585,11 @@ firs numern = start
 add start + start +1
 return array of sums starting with start
 
-def summation_sequence(start, length)
-  arr = [start]
-  i = 1
-  while i <= length
-    new_num = i + arr[-1]
-    arr << new_num
-    puts "#{new_num} is"
-    i += 1
-  end
-return arr
-end
-
-
-print summation_sequence(3, 4) # => [3, 6, 21, 231]
-print summation_sequence(5, 3) # => [5, 15, 120]
-
-
-
 arr begins with start
 while i < length (iterations/array length)
 next ele is sum of [0..start]
 next ele is sum of [0..last ele]
 next ele is sum of [0..last ele]
-
-
-
-
 
 
 def summation_sequence(start, length)
@@ -640,3 +618,118 @@ p summation_of(3)
 
 p summation_sequence(3, 4) # => [3, 6, 21, 231]
 p summation_sequence(5, 3) # => [5, 15, 120]
+p summation_sequence(4, 10) # => [5, 15, 120]
+
+def summation_sequence(start, length)
+  arr = [start]
+  while arr.length < length 
+  arr << summation_of(arr[-1])
+  end
+
+  return arr
+end
+
+def summation_of(num)
+  count = 0
+  (1..num).each { |n| count += n}
+  return count
+end
+
+p summation_of(3)
+
+p summation_sequence(3, 4) # => [3, 6, 21, 231]
+p summation_sequence(5, 3) # => [5, 15, 120]
+p summation_sequence(2, 5)
+
+
+
+
+# Fibonacci
+# The fibonacci sequence is a sequence of numbers whose first and second elements are 1. 
+# To generate further elements of the sequence we take the sum of the previous two elements. 
+# For example the first 6 fibonacci numbers are 1, 1, 2, 3, 5, 8. Write a method fibonacci 
+# that takes in a number length and returns the fibonacci sequence up to the given length.
+
+arr[1] = 1
+arr[2] = 1
+while length
+next iteration is (arr[-1] + arr[-2])
+
+
+def fibonacci(length)
+  arr = [1, 1]
+  returned_arr = []
+  i = 0
+  while length > 2 && i < length
+    arr << (arr[-1] + arr[-2])
+    i += 1
+  end
+
+  return arr[0..length]
+end
+
+p fibonacci(0) # => []
+
+p fibonacci(1) # => [1]
+
+p fibonacci(6) # => [1, 1, 2, 3, 5, 8]
+
+p fibonacci(8) # => [1, 1, 2, 3, 5, 8, 13, 21]
+
+
+def fibonacci(length)
+  arr = [1, 1]
+  returned_arr = []
+  returned_arr_2 = [1]
+  i = 2
+  while length > 2 && i < length
+    arr << (arr[-1] + arr[-2])
+    i += 1
+  end
+  
+  if length == 0 
+      return returned_arr
+  elsif length == 1
+      return returned_arr_2
+  end
+
+  return arr[0..length]
+end
+
+p fibonacci(0) # => []
+
+p fibonacci(1) # => [1]
+
+p fibonacci(6) # => [1, 1, 2, 3, 5, 8]
+
+p fibonacci(8) # => [1, 1, 2, 3, 5, 8, 13, 21]
+
+
+def fibonacci(length)
+
+  arr = [1, 1]
+  returned_arr = []
+  returned_arr_2 = [1]
+  i = 2
+
+  while arr.length < length
+    arr << (arr[-1] + arr[-2])
+    i += 1
+  end
+  
+  if length == 0 
+      return returned_arr
+  elsif length == 1
+      return returned_arr_2
+  end
+
+  return arr
+end
+
+p fibonacci(0) # => []
+
+p fibonacci(1) # => [1]
+
+p fibonacci(6) # => [1, 1, 2, 3, 5, 8]
+
+p fibonacci(8) # => [1, 1, 2, 3, 5, 8, 13, 21]
