@@ -797,7 +797,7 @@ def vowel_cipher(str)
     if vowels.include?(l)
       old_i = vowels.index(l)
       new_i = old_i + 1
-      new_letter = vowels[new_i]
+      new_letter = vowels[new_i % vowels.length]
       new_str << new_letter
     else
       new_str << l
@@ -835,3 +835,36 @@ puts vowel_cipher("bootcamp") #=> buutcemp
 puts vowel_cipher("paper cup") #=> pepir cap
 puts vowel_cipher("bootcamp") #=> buutcemp
 puts vowel_cipher("paper cup") #=> pepir cap
+
+
+# Double Letter Count
+# Write a method that takes in a string and returns the number of times 
+# that the same letter repeats twice in a row.
+
+establish a count
+iterate over each char string
+put it in array
+increment count when current incerement matches last ele in array
+return count
+
+
+def double_letter_count(string)
+  count = 0
+  temp_arr = []
+  string.each_char do |l|
+    temp_arr << l
+    if l == temp_arr[-2]
+      count += 1
+    end
+  end
+
+  return count
+end
+
+
+p double_letter_count("the jeep rolled down the hill") #=> 3
+puts double_letter_count("bootcamp") #=> 1
+
+
+
+
