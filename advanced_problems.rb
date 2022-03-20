@@ -914,11 +914,52 @@ p adjacent_sum([3, 7, 2, 11]) #=> [10, 9, 13], because [ 3+7, 7+2, 2+11 ]
 p adjacent_sum([2, 5, 1, 9, 2, 4]) #=> [7, 6, 10, 11, 6], because [2+5, 5+1, 1+9, 9+2, 2+4]
 
 
+# Pyramid Sum
+# Write a method pyramid_sum that takes in an array of numbers
+# representing the base of a pyramid. The function should return a 2D array representing
+# a complete pyramid with the given base. To construct a level of the pyramid, 
+# we take the sum of adjacent elements of the level below.
+
+
+# For example, the base [1, 4, 6] gives us the following pyramid
+#     15
+#   5   10
+# 1   4    6
+
+
+takes in array of 3 nums
+iterate over each and << into arr
+
+
+num1 + num2 = arr[2][1]
+num2 + num3 = arr[2][2]
+arr[2][1] + arr[2][2] = arr[1][1]
+return 2D array
+
+use .unshift to move element to front
+
+
+
+
+
+def pyramid_sum(base)
+
+  pyramid = [base]
+
+  while pyramid.length < base.length
+    prev_level = pyramid[0]
+    next_level = adjacent_sum(prev_level)
+    pyramid.unshift(next_level)
+  end
+
+  return pyramid
+end
+
 def adjacent_sum(arr)
   new_arr = []
-  arr.map do |n|
-    unless n == arr[-1]
-      new_arr << n + n[i+1]
+  arr.each_with_index do |n, i|
+    unless i == arr.length - 1
+      new_arr << arr[i] + arr[i+1]
     end  
   end
   
@@ -926,6 +967,10 @@ def adjacent_sum(arr)
 end
 
 
-p adjacent_sum([3, 7, 2, 11]) #=> [10, 9, 13], because [ 3+7, 7+2, 2+11 ]
 
-p adjacent_sum([2, 5, 1, 9, 2, 4]) #=> [7, 6, 10, 11, 6], because [2+5, 5+1, 1+9, 9+2, 2+4]
+
+
+p pyramid_sum([1, 4, 6]) #=> [[15], [5, 10], [1, 4, 6]]
+
+
+p pyramid_sum([3, 7, 2, 11]) #=> [[41], [19, 22], [10, 9, 13], [3, 7, 2, 11]]
