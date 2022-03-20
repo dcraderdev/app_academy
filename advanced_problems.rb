@@ -866,5 +866,66 @@ p double_letter_count("the jeep rolled down the hill") #=> 3
 puts double_letter_count("bootcamp") #=> 1
 
 
+def double_letter_count(string)
+  count = 0
+
+  string.each_char.with_index do |char, i|
+    if string[i] == string[i + 1]
+      count += 1
+    end
+  end
+
+  return count
+end
+
+puts double_letter_count("the jeep rolled down the hill") #=> 3
+puts double_letter_count("bootcamp") #=> 1
 
 
+
+# Adjacent Sum
+# Write a method adjacent_sum that takes in an array of numbers
+# and returns a new array containing the sums of adjacent numbers in the original array. 
+# See the examples.
+
+
+takes in array
+iterates over array.with_index
+new_arr << takes iteration[i] + arr[i+1]
+
+returns array
+
+
+
+def adjacent_sum(arr)
+  new_arr = []
+  arr.each_with_index do |n, i|
+    unless i == arr.length - 1
+      new_arr << arr[i] + arr[i+1]
+    end  
+  end
+  
+  return new_arr
+end
+
+
+p adjacent_sum([3, 7, 2, 11]) #=> [10, 9, 13], because [ 3+7, 7+2, 2+11 ]
+
+p adjacent_sum([2, 5, 1, 9, 2, 4]) #=> [7, 6, 10, 11, 6], because [2+5, 5+1, 1+9, 9+2, 2+4]
+
+
+def adjacent_sum(arr)
+  new_arr = []
+  arr.map do |n|
+    unless n == arr[-1]
+      new_arr << n + n[i+1]
+    end  
+  end
+  
+  return new_arr
+end
+
+
+p adjacent_sum([3, 7, 2, 11]) #=> [10, 9, 13], because [ 3+7, 7+2, 2+11 ]
+
+p adjacent_sum([2, 5, 1, 9, 2, 4]) #=> [7, 6, 10, 11, 6], because [2+5, 5+1, 1+9, 9+2, 2+4]
