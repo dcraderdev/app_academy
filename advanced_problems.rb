@@ -966,11 +966,39 @@ def adjacent_sum(arr)
   return new_arr
 end
 
-
-
-
-
 p pyramid_sum([1, 4, 6]) #=> [[15], [5, 10], [1, 4, 6]]
 
-
 p pyramid_sum([3, 7, 2, 11]) #=> [[41], [19, 22], [10, 9, 13], [3, 7, 2, 11]]
+
+
+
+# All Else Equal
+# Write a method all_else_equal that takes in an array of numbers. 
+# The method should return the element of the array that is equal to half of the sum of 
+# all elements of the array. If there is no such element, the method should return nil.
+
+
+
+def all_else_equal(arr)
+  arr.each do |l| 
+    if sum_of_all_else(arr) / 2.0 == l 
+      return l
+    end
+  end
+end
+
+#works
+def sum_of_all_else(arr)
+  sum = 0
+  arr.each { |a| sum+=a }
+return sum
+end
+
+# p sum_of_all_else([2, 4, 3, 10, 1])
+p all_else_equal([2, 4, 3, 10, 1]) #=> 10, because the sum of all elements is 20
+p all_else_equal([6, 3, 5, -9, 1]) #=> 3, because the sum of all elements is 6
+p all_else_equal([1, 2, 3, 4])     #=> nil, because the sum of all elements is 10 and there is no 5 in the array
+
+
+
+
