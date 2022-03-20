@@ -779,3 +779,59 @@ end
 puts caesar_cipher("apple", 1)    #=> "bqqmf"
 puts caesar_cipher("bootcamp", 2) #=> "dqqvecor"
 puts caesar_cipher("zebra", 4)    #=> "difve"
+
+
+
+# Vowel Cipher
+# Write a method vowel_cipher that takes in a string and returns a new string 
+# where every vowel becomes the next vowel in the alphabet.
+
+
+
+def vowel_cipher(str)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  vowels = "aeiou"
+  new_str = ""
+
+  str.each_char do |l|
+    if vowels.include?(l)
+      old_i = vowels.index(l)
+      new_i = old_i + 1
+      new_letter = vowels[new_i]
+      new_str << new_letter
+    else
+      new_str << l
+    end
+  end
+
+  return new_str
+end
+
+
+puts vowel_cipher("bootcamp") #=> buutcemp
+puts vowel_cipher("paper cup") #=> pepir cap
+
+
+
+def vowel_cipher(str)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  vowels = "aeiou"
+  new_str = ""
+
+  new_chars = str.split("").map do |l|
+    if vowels.include?(l)
+      old_i = vowels.index(l)
+      new_i = old_i + 1
+      vowels[new_i % vowels.length]
+    else
+      l
+    end
+  end
+
+  return new_chars.join("")
+end
+
+puts vowel_cipher("bootcamp") #=> buutcemp
+puts vowel_cipher("paper cup") #=> pepir cap
+puts vowel_cipher("bootcamp") #=> buutcemp
+puts vowel_cipher("paper cup") #=> pepir cap
