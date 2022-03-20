@@ -733,3 +733,49 @@ p fibonacci(1) # => [1]
 p fibonacci(6) # => [1, 1, 2, 3, 5, 8]
 
 p fibonacci(8) # => [1, 1, 2, 3, 5, 8, 13, 21]
+
+
+
+
+# Caesar Cipher
+# Write a method caesar_cipher that takes in a string and a number. 
+# The method should return a new string where every character of the original is 
+# shifted num characters in the alphabet.
+
+
+# Feel free to use this variable:
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+
+take in str
+.split str into letters
+new_letter = find letter[] in alphabet + 2
+shovel into new str or new_word = {^}.join
+
+
+at what index in alphabet is l
+add 2 to that l[i]  
+
+
+
+
+def caesar_cipher(str, num)
+
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  new_str = ""
+
+  str.each_char do |l|
+    old_i = alphabet.index(l)
+    new_i = old_i + num
+    new_letter = alphabet[new_i % 26]
+    new_str += new_letter
+  end
+
+  return new_str
+end
+
+
+
+puts caesar_cipher("apple", 1)    #=> "bqqmf"
+puts caesar_cipher("bootcamp", 2) #=> "dqqvecor"
+puts caesar_cipher("zebra", 4)    #=> "difve"
