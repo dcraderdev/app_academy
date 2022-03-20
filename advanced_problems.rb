@@ -985,6 +985,7 @@ def all_else_equal(arr)
       return l
     end
   end
+  return nil
 end
 
 #works
@@ -1000,5 +1001,48 @@ p all_else_equal([6, 3, 5, -9, 1]) #=> 3, because the sum of all elements is 6
 p all_else_equal([1, 2, 3, 4])     #=> nil, because the sum of all elements is 10 and there is no 5 in the array
 
 
+# Anagrams
+# Write a method anagrams? that takes in two words and returns a boolean
+# indicating whether or not the words are anagrams. 
+# Anagrams are words that contain the same characters but not necessarily in 
+# the same order. 
+# Solve this without using .sort
 
+takes in word
+returns boolean
+true if word 
+
+def anagrams?(word1, word2)
+  hash1 = Hash.new(0)
+  hash2 = Hash.new(0)
+  word1.each_char { |l| hash1[l] += 1 }
+  word2.each_char { |k| hash2[k] += 1 }  
+
+  if hash1 == hash2
+  return true
+  end
+
+  return false
+end
+
+puts anagrams?("cat", "act")          #=> true
+puts anagrams?("restful", "fluster")  #=> true
+puts anagrams?("cat", "dog")          #=> false
+puts anagrams?("boot", "bootcamp")    #=> false
+
+
+def anagrams?(word1, word2)
+  return create_hash(word1) == create_hash(word2)
+end
+
+def create_hash(word)
+  hash_word = Hash.new(0)
+  word.each_char { |l| hash_word[l] += 1 }
+  return hash_word
+end
+
+puts anagrams?("cat", "act")          #=> true
+puts anagrams?("restful", "fluster")  #=> true
+puts anagrams?("cat", "dog")          #=> false
+puts anagrams?("boot", "bootcamp")    #=> false
 
