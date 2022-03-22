@@ -1056,17 +1056,17 @@ iterate over each char in word
 if the character is not a vowel do not start << rest of word into new_word
 
 def consonant_cancel(sentence)
-  words = sentence.split(" ")
+  return sentence.split(" ").map { |w| remove_first_const(w) }.join(" ")
+end
+
+
+def remove_first_const(word)
   vowels = "aeiouAEIOU"
-  new_words =
-  words.each_char.with_index do |l, i|
-    until vowels.include?(l) 
-      l.pop
-    then
-    new_words << l
-
-
-
+  word.each_char.with_index do |l , i|
+    if vowels.include?(l)
+      return word[i..-1]
+    end
+  end
 end
 
 
