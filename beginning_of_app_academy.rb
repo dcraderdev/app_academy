@@ -101,3 +101,57 @@ greet(*names)    # => "Hey Grace, your last name is Hopper"
 old_hash = { a: 1, b: 2 }
 new_hash = { **old_hash, c: 3 }
 p new_hash # => {:a=>1, :b=>2, :c=>3}
+
+# This will also unpack an array to use inside of a parameter if we
+# lets say fed it a variable but it epxected 2 parameters
+
+def say_hello(first_name, last_name)
+  p first_name
+  p last_name
+end
+
+arr = ["a", "b"]
+say_hello(arr)
+# this would give us an error becuse arr is one variable with 1 piece of data, an array
+# if we want to unpack this we can use the * splat operator before our variable name inside the paraters
+# and it will unpack the array for us
+
+def say_hello(first_name, last_name)
+  p first_name
+  p last_name
+end
+
+arr = ["a", "b"]
+say_hello(*arr)
+# now it works
+
+
+
+
+
+# Inject with only a block
+
+# example:
+[11, 7, 2, 4].inject { |acc, el| acc + el }
+
+
+# FIRST ITERATION:
+# acc = 11
+# el = 7
+# new_acc = 18
+[11, 7, 2, 4].inject { |acc, el| acc + el }
+
+
+
+# SECOND ITERATION:
+# acc = 18
+# el = 2
+# new_acc = 20
+[11, 7, 2, 4].inject { |acc, el| acc + el }
+
+# last iteration
+# acc = 20
+# el = 4
+# new_acc = 24
+p [11, 7, 2, 4].inject { |acc, el| acc + el } # => 24
+
