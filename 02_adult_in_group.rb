@@ -33,9 +33,11 @@ def adult_in_group?(people)
     return false
 end
 
+
+
 def adult_in_group?(people)
     people.each do |person|
-        person.any? { |k, v| v == Numeric && v >= 18 }
+        person.any? { |k, v| (v == Numeric && v >= 18) }
     end
     return false
 end
