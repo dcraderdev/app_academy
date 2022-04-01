@@ -19,6 +19,7 @@ def filter_lengths(strings, length=5)
       new_arr << w
     end
   end
+  return new_arr
 end
 
 
