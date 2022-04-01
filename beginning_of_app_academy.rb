@@ -119,7 +119,7 @@ say_hello(arr)
 def say_hello(first_name, last_name)
   p first_name
   p last_name
-end
+end 
 
 arr = ["a", "b"]
 say_hello(*arr)
