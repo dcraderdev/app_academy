@@ -1,5 +1,18 @@
+
+# def multi_dimensional_sum(array)
+
+
+
 # Write a method, multi_dimensional_sum(array), that accepts a multidimensional array as an arg 
 # and returns the sum of all numbers in the array.
+
+
+
+
+def multi_dimensional_sum(array)
+    array.inject { |acc, el| acc + el}.sum
+end
+
 
 
 arr_1 = [
@@ -9,6 +22,13 @@ arr_1 = [
 ]
 
 p multi_dimensional_sum(arr_1)    # => 19
+
+
+
+
+
+
+
 
 arr_2 = [
     [ [3, 6], [7] ],
