@@ -57,9 +57,7 @@ p adult_in_group?(people_2)    # => false
 
 
 def adult_in_group?(people)
-    people.first['age']any? { |hash| hash['age'] >= 100 }
-
-   
+    people.any? { |person| person[:age] >= 18 }
 end
 
 
