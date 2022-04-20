@@ -10,7 +10,13 @@
 
 
 def multi_dimensional_sum(array)
-    array.inject { |acc, el| acc + el}.sum
+    array.flatten.inject { |acc, el| acc + el}
+end
+
+
+
+def multi_dimensional_sum(array)
+    array.flatten.inject { |acc, el| acc + el}
 end
 
 
@@ -22,12 +28,6 @@ arr_1 = [
 ]
 
 p multi_dimensional_sum(arr_1)    # => 19
-
-
-
-
-
-
 
 
 arr_2 = [
