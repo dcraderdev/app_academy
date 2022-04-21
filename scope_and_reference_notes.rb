@@ -40,3 +40,58 @@ def bubble_sort(array)
 
     array
 end
+
+
+
+
+
+def say_hello
+    message = "hello"
+    p message
+end
+
+say_hello
+
+
+# # Global Variables
+
+# Everywhere area in our code can access the global scope. 
+# To define variables in the global scope, we must use special syntax. $
+
+
+$message = "hello globe"
+
+def say_hello
+    p $message
+end
+
+say_hello # => "hello globe"
+
+
+# # Constants
+
+# A constant is denoted syntactically by beginning the name with a capital letter. 
+# By convention we like to make the entire name capital to emphasize it being a special constant.
+# A constant variable cannot be reassigned:
+# But it can be edited/mutated/changed
+
+
+FOOD = "pho"
+FOOD[0] = "P"
+p FOOD # => "Pho
+
+FOOD = "pho"
+$drink = "ice coffee"
+
+def my_favorite
+    p FOOD
+    p $drink
+end
+
+my_favorite
+
+
+
+
+
+
