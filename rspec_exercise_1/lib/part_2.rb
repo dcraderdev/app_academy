@@ -45,5 +45,23 @@ end
 
 
 def caesar_cipher(str, n)
+  alphabet = ("a".."z").to_a
+  new_word = ""
 
+  str.each_char do |l|
+  if alphabet.include?(l)
+    old_i = alphabet.index(l)
+    new_i = old_i + n
+    new_word += alphabet[new_i % 26]
+  else
+    new_word += l
+  end
 end
+  new_word
+end
+
+p caesar_cipher("help", 2)
+
+
+
+
