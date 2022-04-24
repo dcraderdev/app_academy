@@ -90,15 +90,15 @@ end
 
 
 def power_of_two?(number)
-
-  (1...number).each do |n| 
-    if number == n * n
-      return true, "#{n}"
-    end
+  product = 1
+  
+  while product < number
+    product *= 2
   end
 
-  return false
+  product == number
 end
+
 
 p power_of_two?(16)
 p power_of_two?(4)
