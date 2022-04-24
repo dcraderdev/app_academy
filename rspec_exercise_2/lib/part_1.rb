@@ -86,10 +86,21 @@ def star_vowels(word)
   end
   new_word
 end  
-p censor("Gosh darn it", ["gosh", "darn", "shoot"])
 
 
-def power_of_two?(n)
 
+def power_of_two?(number)
+
+  (1...number).each do |n| 
+    if number == n * n
+      return true, "#{n}"
+    end
+  end
+
+  return false
 end
 
+p power_of_two?(16)
+p power_of_two?(4)
+p power_of_two?(32)
+p power_of_two?(81)
