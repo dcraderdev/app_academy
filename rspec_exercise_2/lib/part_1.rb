@@ -59,9 +59,35 @@ end
 
 
 
-def censor(str, arr)
+def censor(str, bad_word)
+  words = str.split(" ")
+  vowels = "aeiou"
+  new_sentence = ""
 
+  new_words = words.map do |w|
+    if bad_word.include?(w.downcase)
+      star_vowels(w)
+    else
+      w
+    end
+  end
+  new_words.join(" ")
 end
+
+def star_vowels(word)
+  vowels = 'aeiouAEIOU'
+  new_word = ""
+  word.each_char do |l|
+    if vowels.include?(l.downcase)
+      new_word << "*"
+    else
+      new_word << l
+    end
+  end
+  new_word
+end  
+p censor("Gosh darn it", ["gosh", "darn", "shoot"])
+
 
 def power_of_two?(n)
 
