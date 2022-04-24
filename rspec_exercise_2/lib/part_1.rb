@@ -50,9 +50,14 @@ p partition([11, 5, 13, 2, 3], 7)
 
 
 
-def merge(hash1, hash2)
-
+def merge(hash1, hash2) 
+  new_hash = Hash.new(0)
+  hash1.each { |k, v| new_hash[k] = v }
+  hash2.each { |k, v| new_hash[k] = v }
+  new_hash
 end
+
+
 
 def censor(str, arr)
 
