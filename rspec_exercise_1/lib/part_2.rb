@@ -29,8 +29,18 @@ end
 
 
 def vowel_counts(str)
+  count = Hash.new(0)
+  vowels = "aeiou"
 
+  str.downcase.each_char do |l| 
+    if vowels.include?(l)
+      count[l] += 1
+    end
+  end
+  count
 end
+
+
 
 
 
