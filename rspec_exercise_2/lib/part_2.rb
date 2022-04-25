@@ -18,3 +18,30 @@
 
 
 
+
+def palindrome?(str)
+  str.each_char.with_index do |char, i|
+    if str[i] != str[-i - 1]
+      return false
+    end
+  end
+  true
+end
+
+
+p palindrome?("tot")
+
+
+
+
+
+
+
+def substrings(str)
+
+end
+
+
+def palindrome_substrings(str)
+
+end
