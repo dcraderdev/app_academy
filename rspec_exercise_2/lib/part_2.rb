@@ -43,6 +43,11 @@ substrings = []
 end
 
 
-def palindrome_substrings(str)
 
+
+def palindrome_substrings(str)
+  substrings(str).select { |w| palindrome?(w) && w.length > 1}
 end
+
+
+palindrome_substrings("abracadabra")
