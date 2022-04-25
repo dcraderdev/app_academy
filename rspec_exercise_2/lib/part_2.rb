@@ -29,16 +29,17 @@ def palindrome?(str)
 end
 
 
-p palindrome?("tot")
-
-
-
-
 
 
 
 def substrings(str)
-
+substrings = []
+  (0...str.length).each do |start_idx|
+    (start_idx...str.length).each do |end_idx|
+      substrings << str[start_idx..end_idx]
+    end
+  end
+  substrings
 end
 
 
