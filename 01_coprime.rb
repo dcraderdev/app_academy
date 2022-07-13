@@ -20,7 +20,7 @@ return true
 
 def coprime?(num1, num2)
   if [num1, num2].max.any? {}
-    
+
 end
 
 p coprime?(25, 12)    # => true
@@ -34,8 +34,8 @@ def coprime?(num1, num2)
  while i < [num1, num2].max
   return false if (num1 % i == 0 && num2 % i == 0)
   i += 1
-  end 
-  return true 
+  end
+  return true
 end
 
 p coprime?(25, 12)    # => true
@@ -53,3 +53,5 @@ p coprime?(25, 12)    # => true
 p coprime?(7, 11)     # => true
 p coprime?(30, 9)     # => false
 p coprime?(6, 24)     # => false
+
+# edit
