@@ -2,7 +2,8 @@ def coprime?(num1, num2)
 
 
 
-
+# test
+p 'test'
 
 
 # Write a method, coprime?(num_1, num_2), that accepts two numbers as args.
