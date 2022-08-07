@@ -143,3 +143,191 @@ function logBetween(lowNum, highNum) {
 };
 
 logBetween(2, 6);
+
+function printFives(max) {
+  let i = 0;
+  while (i < max) {
+    if (i % 5 === 0) {
+      console.log(i);
+    }
+    i++;
+  }
+}
+
+// Example:
+
+printFives(40) // prints out:
+// 0
+// 5
+// 10
+// 15
+
+function logBetweenStepper(min, max, step) {
+  let i = min;
+  while (i <= max) {
+    console.log(i);
+    i += step;
+  }
+
+}
+
+
+// Examples:
+logBetweenStepper(5, 9, 1); // prints out:
+// 5
+// 6
+// 7
+// 8
+// 9
+
+
+logBetweenStepper(-10, 15, 5)  // prints out:
+// -10
+// -5
+// 0
+// 5
+// 10
+// 15
+
+function threeOrSeven(num) {
+  if (num % 3 === 0 || num % 7 === 0)
+    return true;
+  else return false;
+}
+
+console.log(threeOrSeven(3));   // => true
+console.log(threeOrSeven(42));  // => true
+console.log(threeOrSeven(8));   // => false
+
+function sumArray(array) {
+  let sum = 0;
+  for (let i = 0; i <= array.length - 1; i++) {
+    sum += array[i]
+  }
+  return sum
+}
+
+console.log(sumArray([5, 6, 4])); // => 15
+console.log(sumArray([7, 3, 9, 11])); // => 30
+
+function combineArray(array1, array2) {
+  return array1.concat(array2, array2, array1, array1);
+}
+
+console.log(combineArray([1, 2], [3, 4])); // => [1, 2, 3, 4]
+console.log(combineArray([17, 5], [6, 7]));  // => [17, 5, 6, 7]
+
+
+// function doubler(numbers) {
+//     let i = 0
+//     doubled = []
+//     while ( i < numbers.length - 1) {
+//      	doubled.concat(numbers[i] * 2);
+//       i++;
+//     }
+//   return doubled
+// }
+
+
+
+function doubler(array) {
+  let i = 0
+  let doubled = []
+  while (i <= array.length - 1) {
+    let tempNum = array[i] * 2;
+    doubled = doubled.concat(tempNum);
+    i++;
+  }
+  return doubled
+}
+
+console.log(doubler([1, 2, 3, 4])); // => [2, 4, 6, 8]
+console.log(doubler([7, 1, 8])); // => [14, 2, 16]
+
+function countVowels(word) {
+  const vowels = ["a", "e", "i", "o", "u"]
+  let count = 0;
+  let i = 0;
+  while (i <= word.length - 1) {
+    //if (word[i].includes(vowels)){
+    if (vowels.includes(word[i])) {
+
+      count++;
+    }
+    i++;
+  }
+  return count;
+};
+
+console.log(countVowels("bootcamp")); // => 3
+console.log(countVowels("apple")); // => 2
+console.log(countVowels("pizza")); // => 2
+
+
+// function wordWithinArray(array, word) {
+//     if (array.indexOf("b")) {
+//     	return true;
+//       // else return false;
+//     }
+// };
+
+
+function wordWithinArray(array, word) {
+  if (array.indexOf(word) >= 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(
+  wordWithinArray(["apple", "banana", "caramel", "chocolate"], "apple")
+); //=> true
+
+console.log(wordWithinArray(
+  ["dog", "cat", "camel", "bird"], "camel")
+); //=> true
+
+console.log(
+  wordWithinArray(["apple", "banana", "caramel", "chocolate"], "pineapple")
+); //=> false
+
+console.log(wordWithinArray(
+  ["dog", "cat", "camel", "bird"], "panther")
+); //=> false
+
+
+// So the two rules for our version of Pig Latin are:
+
+// 1. For words that start with a vowel, add 'yay' to the end of the word.
+// 2. For words that start with a non-vowel, move all letters that come
+// **before the first vowel** to the **end of the word** then add 'ay'
+
+function pigLatinWord(word) {
+  let vowels = "aeiou";
+  let pigLatinWord = "";
+  if (vowels.includes(word[0])) {
+    return word + "yay";
+  } for (let index = 0; index < word.length; index++) {
+    let letter = word[index];
+
+    if (vowels.includes(letter)) {
+      let firstPart = word.slice(index);
+      let secondPart = word.slice(0, index);
+      return firstPart + secondPart + "ay";
+    }
+  }
+};
+
+
+//     if (vowels.inlcudes(word[i]){
+//       pigLatinWord += word[i];
+//     }
+//     i++;
+//   }
+// };
+
+console.log(pigLatinWord("apple")); //=> "appleyay"
+// console.log(pigLatinWord("eat")); //=> "eatyay"
+console.log(pigLatinWord("banana")); //=> "ananabay"
+// console.log(pigLatinWord("trash")); //=> "ashtray"
