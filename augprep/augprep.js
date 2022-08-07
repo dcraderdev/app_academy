@@ -22,34 +22,43 @@
 
 let nums = [0, 1, 0, 3, 12];
 
+let i = 0
+const numsLength = nums.length - 1
+
 function moveZeroes(nums) {
-  for (let i = 0; i < nums.length - 1; i++) {
+  //  while (let i = 0; i < nums.length - 1;) {
+  while (i < numsLength) {
+
     //console.log(i);
     if (nums[i] === 0) {
-      nums.push(1);
-      nums[i].slice
-      //nums.push(0);
+      nums.push(nums[i]);
+      nums.slice(nums[i]);
+      console.log(i);
+      console.log(nums);
+      // nums.push(0);
     }
+    i++;
   }
   return nums;
 };
 
 
-
-console.log();
-//     console.log(i);
-
-//     if (nums[i] === 0) {
-//       nums.splice(i)
-//     }
-//   }
-// };
-
 console.log(nums);
 console.log(moveZeroes(nums));
 
 
-// console.log('hi');
+// console.log();
+// //     console.log(i);
+
+// //     if (nums[i] === 0) {
+// //       nums.splice(i)
+// //     }
+// //   }
+// // };
+
+
+
+console.log('hi');
 console.log(9 / 2);
 console.log(2 * 2);
 console.log(2 + 2);
@@ -113,3 +122,24 @@ function mathFun(x) {
 
 mathFun("math"); // => "this got confusing fast"
 mathFun("Math"); // => "this got confusing fast"
+
+let numbersAndLetters = ["boo", "z", 17, ["cat"]];
+console.log(numbersAndLetters[0]); // => "b"
+console.log(numbersAndLetters[1]); // => "z"
+console.log(numbersAndLetters[2]); // => 17
+console.log(numbersAndLetters[3]); // => "cat"
+
+
+function logBetween(lowNum, highNum) {
+  for (let i = lowNum; i <= highNum; i++)
+    console.log(i);
+}
+function logBetween(lowNum, highNum) {
+  let i = lowNum
+  while (i <= highNum) {
+    console.log(i);
+    i++;
+  }
+};
+
+logBetween(2, 6);
